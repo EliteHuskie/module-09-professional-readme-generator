@@ -46,11 +46,60 @@ function renderLicenseSection(license) {
   return '';
 }
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license);
 
-`;
+  let markdownContent = '';
+
+// Title that will be used in the README
+  markdownContent += `# ${data.title}\n\n`;
+
+// License Badge that is displayed near top of README
+  if (licenseBadge) {
+    markdownContent += `${licenseBadge}\n\n`;
+  }
+// Table of Contents for README
+  markdownContent += `## Table of Contents\n\n`;
+  markdownContent += `1. [Description](#description)\n`;
+  markdownContent += `2. [Usage](#usage)\n\n`;
+  markdownContent += `3. [Installation](#installation)\n`;
+  markdownContent += `4. [Contributing](#contributing)\n\n`;
+  markdownContent += `5. [Tests](#tests)\n\n`;
+  markdownContent += `6. [License](#license)\n\n`;
+  markdownContent += `7. [Questions](#questions)\n\n`;
+
+// Sections that are used in the README
+  markdownContent += `## Description\n\n`;
+  markdownContent += `${data.description}\n\n`;
+  markdownContent += `## Usage\n\n`;
+  markdownContent += `${data.usage}\n\n`;
+  markdownContent += `## Installation\n\n`;
+  markdownContent += `${data.installation}\n\n`;
+  markdownContent += `## Contributing\n\n`;
+  markdownContent += `${data.contributing}\n\n`;
+  markdownContent += `## Tests\n\n`;
+  markdownContent += `${data.tests}\n\n`;
+
+// License section for the link to the license that user input
+  if (licenseBadge && licenseSection) {
+    markdownContent += `${licenseSection}\n\n`;
+  }
+
+// Github Username + Email Address of User for README that displays in Questions section
+  if (data.username || data.email) {
+    markdownContent += `## Questions\n\n`;
+    if (data.username) {
+      const githubUrl = `https://github.com/${data.username}`;
+      markdownContent += `Find me on GitHub: [${data.username}](${githubUrl})\n\n`;
+    }
+    if (data.email) {
+      markdownContent += `Contact me at: [${data.email}](mailto:${data.email})\n\n`;
+    }
+  }
+
+  return markdownContent;
 }
 
 module.exports = generateMarkdown;
