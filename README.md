@@ -46,4 +46,4 @@ This project is licensed under the [MIT](https://opensource.org/licenses/MIT) li
 
 Find me on GitHub: [EliteHuskie](https://github.com/EliteHuskie)
 
-Contact me at: [Stratton_10@hotmail.com](mailto:Stratton_10@hotmail.com)
+Contact me at: [EliteHuskie@gmail.com](mailto:EliteHuskie@gmail.com)
