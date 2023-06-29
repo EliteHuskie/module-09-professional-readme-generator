@@ -51,11 +51,30 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Function to write README file
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create a function to initialize app
-function init() {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`${fileName} file has been generated!`);
+    }
+  });
+}
 
-// Function call to initialize app
-init();
+// Function to initialize app
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+      // Generate the README using the users' input
+      const readmeContent = generateMarkdown(answers);
+  
+      // Write the README file
+      writeToFile('README.md', readmeContent);
+    });
+  }
+  
+  // Function call to initialize app
+  init();
