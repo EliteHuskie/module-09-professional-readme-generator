@@ -26,7 +26,7 @@ Generating README files for projects
 
 ## Installation
 
-Node + Inquirier are needed to run the application
+Node JS + Inquirier are required to run the application
 
 ## Contributing
 
@@ -34,7 +34,9 @@ Not Applicable
 
 ## Tests
 
-Run 'node index.js' to use the README generator
+Run 'node index.js' in terminal window to use the README generator
+
+Demo can be viewed at: https://drive.google.com/file/d/1rOqJcDoYuJ1GATg6rL6Pz7HHtNWpQJQo/view?usp=sharing
 
 ## License
 
@@ -45,4 +47,3 @@ This project is licensed under the [MIT](https://opensource.org/licenses/MIT) li
 Find me on GitHub: [EliteHuskie](https://github.com/EliteHuskie)
 
 Contact me at: [Stratton_10@hotmail.com](mailto:Stratton_10@hotmail.com)
-
